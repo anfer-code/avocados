@@ -61,6 +61,11 @@ const formatPrice = (price) => {
 
 // div para introducir mi información
 const nodeApp = document.querySelector("#app")
+nodeApp.addEventListener("click", (ev) => {
+	if(ev.target.nodeName === 'H2') {
+		alert("hola")
+	}
+})
 
 	// Creo mi funcion asincrona la cual me traera mis datos.
 async function traerDatos(url) {
@@ -94,7 +99,7 @@ function pintarDatos(data) {
 		const title = document.createElement("h2")
 		title.textContent = i.name
 		title.className = 'text-lg'
-
+		
 		// Creando precio y su contenido
 		const price = document.createElement("p")
 		price.textContent = formatPrice(i.price)
